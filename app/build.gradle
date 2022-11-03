@@ -1,0 +1,69 @@
+import com.hjb.versionplugin.*
+
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    // 2. 导入 plugin-version 插件
+    id "com.hjb.versionplugin"
+}
+
+kapt {
+    arguments {
+        arg("AROUTER_MODULE_NAME", project.getName())
+    }
+}
+
+android {
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.hjb.androidcodereview"
+        minSdk 21
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [
+                        "room.schemaLocation"  : "$projectDir/schemas".toString(),//输出数据库概要, 可以查看字段信息, 版本号, 数据库创建语句等
+                        "room.incremental"     : "true",//启用 Gradle 增量注释处理器
+                        "room.expandProjection": "true"//在使用星投影时会根据函数返回类型来重写SQL查询语句
+                ]
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+    kotlinOptions {
+        jvmTarget = '11'
+    }
+
+    buildFeatures {
+        viewBinding true
+        dataBinding true
+    }
+    namespace 'com.hjb.androidcodereview'
+    packagingOptions {
+        exclude 'META-INF/androidx.*'
+    }
+
+}
+
+dependencies {
+
+    kapt Room.room_compiler
+    implementation project(":libs:commonlib")
+    runtimeOnly project(":module:login")
+}

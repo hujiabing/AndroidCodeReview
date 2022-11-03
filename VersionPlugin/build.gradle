@@ -1,0 +1,37 @@
+plugins {
+    id("java-gradle-plugin")
+    id("org.jetbrains.kotlin.jvm") version "1.7.20"
+}
+
+repositories {
+    maven { url 'https://maven.aliyun.com/repository/public' }
+    maven { url 'https://maven.aliyun.com/nexus/content/repositories/jcenter' }
+    maven { url 'https://maven.aliyun.com/nexus/content/repositories/google' }
+    maven { url 'https://maven.aliyun.com/repository/central' }
+    google()
+    mavenCentral()
+    gradlePluginPortal()
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
+}
+
+dependencies {
+    //添加Gradle相关的API，否则无法自定义Plugin和Task
+    implementation(gradleApi())
+    implementation("org.jetbrains.kotlin:kotlin-gradle-plugin:1.7.20")
+}
+
+gradlePlugin {
+    plugins {
+        create("version") {
+            //添加插件
+            id = "com.hjb.versionplugin"
+            //在根目录创建类 VersionPlugin 继承 Plugin<Project>
+            implementationClass = "com.hjb.versionplugin.VersionPlugin"
+        }
+
+    }
+}

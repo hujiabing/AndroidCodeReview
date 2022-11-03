@@ -1,0 +1,19 @@
+import com.hjb.versionplugin.*
+
+plugins {
+    id 'com.hjb.versionplugin'
+}
+apply from: "../../common_lib.gradle"
+
+
+dependencies {
+    //遍历去依赖 方便书写
+    AndroidX.INSTANCE.lifecycleDependencies.each { v -> api v }
+    AndroidX.INSTANCE.baseDependencies.each { v -> api v }
+    RxJava.INSTANCE.rxJavaDependencies.each { v -> api v }
+    Coroutines.INSTANCE.coroutinesDependencies.each { v -> api v }
+    api Libs.autoService
+    api Libs.strictDatabinding
+    api Libs.unPeekLivedata
+    api Libs.fastjson
+}

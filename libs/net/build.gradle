@@ -1,0 +1,12 @@
+import com.hjb.versionplugin.*
+
+plugins {
+    id 'com.hjb.versionplugin'
+}
+apply from: "../../common_lib.gradle"
+
+
+dependencies {
+    Retrofit.INSTANCE.retrofitDependencies.each {v -> api v}
+    implementation project(":libs:baselib")
+}

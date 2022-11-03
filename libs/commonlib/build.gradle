@@ -1,0 +1,15 @@
+import com.hjb.versionplugin.*
+
+plugins {
+    id 'com.hjb.versionplugin'
+}
+apply from: "../../common_lib.gradle"
+
+
+dependencies {
+    api project(":libs:net")
+    api project(":libs:baselib")
+    api project(":libs:hwebview")
+    api AndroidX.constraintlayout
+    Room.INSTANCE.roomDependencies.each { v -> api v }
+}
