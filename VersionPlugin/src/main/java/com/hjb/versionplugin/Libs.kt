@@ -43,6 +43,7 @@ object AndroidX {
 }
 
 object Google {
+    const val autoService = "com.google.auto.service:auto-service:1.0.1"
     const val material = "com.google.android.material:material:1.7.0"
 }
 
@@ -93,7 +94,7 @@ object Retrofit {
 
 object Libs {
     const val fastjson = "com.alibaba:fastjson:1.2.83"
-    const val autoService = "com.google.auto.service:auto-service:1.0.1"
+
     const val strictDatabinding = "com.kunminx.arch:strict-databinding:5.6.0"
     const val unPeekLivedata = "com.kunminx.arch:unpeek-livedata:7.8.0"
 }

@@ -12,7 +12,7 @@ dependencies {
     AndroidX.INSTANCE.baseDependencies.each { v -> api v }
     RxJava.INSTANCE.rxJavaDependencies.each { v -> api v }
     Coroutines.INSTANCE.coroutinesDependencies.each { v -> api v }
-    api Libs.autoService
+    api Google.autoService
     api Libs.strictDatabinding
     api Libs.unPeekLivedata
     api Libs.fastjson

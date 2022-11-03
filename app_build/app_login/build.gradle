@@ -9,26 +9,16 @@ plugins {
 }
 
 android {
-    namespace 'com.hjb.androidcodereview'
+    namespace 'com.hjb.app_login'
     compileSdk rootProject.ext.compileSdk
 
     defaultConfig {
-        applicationId "com.hjb.androidcodereview"
+        applicationId "com.hjb.app_login"
         minSdk rootProject.ext.minSdk
         targetSdk rootProject.ext.targetSdk
         versionCode rootProject.ext.versionCode
         versionName rootProject.ext.versionName
 
-
-        javaCompileOptions {
-            annotationProcessorOptions {
-                arguments = [
-                        "room.schemaLocation"  : "$projectDir/schemas".toString(),//输出数据库概要, 可以查看字段信息, 版本号, 数据库创建语句等
-                        "room.incremental"     : "true",//启用 Gradle 增量注释处理器
-                        "room.expandProjection": "true"//在使用星投影时会根据函数返回类型来重写SQL查询语句
-                ]
-            }
-        }
     }
 
     buildTypes {
@@ -44,20 +34,16 @@ android {
     kotlinOptions {
         jvmTarget = '11'
     }
-
     buildFeatures {
         viewBinding true
         dataBinding true
     }
-
     packagingOptions {
         exclude 'META-INF/androidx.*'
     }
-
 }
 
 dependencies {
-
     kapt Room.room_compiler
     implementation project(":libs:commonlib")
     runtimeOnly project(":module:login")

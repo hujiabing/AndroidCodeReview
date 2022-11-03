@@ -10,5 +10,5 @@ apply from: "../../common_lib.gradle"
 dependencies {
     api project(":libs:baselib")
     implementation AndroidX.constraintlayout
-    kapt Libs.autoService //如果某个业务模块需要对外开放，也就是需要其他模块进行访问，那么必须添加注解处理器
+    kapt Google.autoService //如果某个业务模块需要对外开放，也就是需要其他模块进行访问，那么必须添加注解处理器
 }
