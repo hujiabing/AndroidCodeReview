@@ -1,4 +1,4 @@
-package com.hjb.hwebview
+package com.hjb.hwebviewimpl
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

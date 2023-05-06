@@ -3,7 +3,7 @@ package com.hjb.login
 import android.content.Context
 import android.content.Intent
 import com.google.auto.service.AutoService
-import com.hjb.baselib.autoservice.ILoginInterface
+import com.hjb.interfaces.login.ILoginInterface
 
 
 /**

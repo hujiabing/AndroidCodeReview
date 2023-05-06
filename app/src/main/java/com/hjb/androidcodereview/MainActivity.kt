@@ -7,10 +7,9 @@ import androidx.lifecycle.ViewModelProvider
 import com.hjb.androidcodereview.databinding.ActivityMainBinding
 import com.hjb.androidcodereview.db.AppDataDB
 import com.hjb.androidcodereview.delegate.Late
-import com.hjb.baselib.autoservice.ILoginInterface
-import com.hjb.baselib.autoservice.IWebViewInterface
-import com.hjb.baselib.autoservice.MyServiceLoader
-import com.hjb.commonlib.utils.loge
+import com.hjb.interfaces.MyServiceLoader
+import com.hjb.interfaces.login.ILoginInterface
+import com.hjb.interfaces.webview.IWebViewInterface
 import kotlinx.coroutines.*
 import java.util.*
 import kotlin.coroutines.CoroutineContext
@@ -53,13 +52,18 @@ class MainActivity : AppCompatActivity(), CoroutineScope by CoroutineScope(Dispa
 
 
     class ViewClick(var activity: MainActivity) {
-        fun onDataQueryAll() {
+        fun login() {
 
-//            val iWebViewInterface = MyServiceLoader.load(IWebViewInterface::class.java)
-//            iWebViewInterface?.startWebViewActivity(activity, "https://baidu.com", "百度")
 
             val iLoginInterface = MyServiceLoader.load(ILoginInterface::class.java)
             iLoginInterface?.startLoginActivity(activity)
+        }
+
+        fun toWeb() {
+
+            val iWebViewInterface = MyServiceLoader.load(IWebViewInterface::class.java)
+            iWebViewInterface?.startWebViewActivity(activity, "https://baidu.com", "百度")
+
         }
 
 

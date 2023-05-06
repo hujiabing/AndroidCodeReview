@@ -2,13 +2,12 @@ import com.hjb.versionplugin.*
 
 plugins {
     id 'com.hjb.versionplugin'
-    id 'kotlin-kapt'
+    id 'org.jetbrains.kotlin.android'
 }
 apply from: "../../common_lib.gradle"
 
 
 dependencies {
-    api project(":libs:baselib")
-    implementation AndroidX.constraintlayout
-    kapt Google.autoService //如果某个业务模块需要对外开放，也就是需要其他模块进行访问，那么必须添加注解处理器
+    implementation project(":libs:interfaces")
+    implementation project(":libs:baselib")
 }

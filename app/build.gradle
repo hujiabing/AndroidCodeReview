@@ -57,8 +57,8 @@ android {
 }
 
 dependencies {
-
     kapt Room.room_compiler
     implementation project(":libs:commonlib")
     runtimeOnly project(":module:login")
+    runtimeOnly project(":module:hwebviewimpl")
 }

@@ -12,8 +12,11 @@ dependencies {
     AndroidX.INSTANCE.baseDependencies.each { v -> api v }
     RxJava.INSTANCE.rxJavaDependencies.each { v -> api v }
     Coroutines.INSTANCE.coroutinesDependencies.each { v -> api v }
+    api AndroidX.constraintlayout
     api Google.autoService
     api Libs.strictDatabinding
     api Libs.unPeekLivedata
     api Libs.fastjson
+    api Libs.MMKV //腾讯mmkv 存储 快速存储 不重要可以丢失的数据用这个 初始化加载慢点
+    api AndroidX.datastore_preferences //Google出品替代sp产品 不会丢失数据 在简单数据存储速度上不如 mmkv 但是大数据量存储很快
 }

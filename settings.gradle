@@ -32,9 +32,12 @@ include ':libs:net'
 include ':libs:commonlib'
 include ':libs:hwebview'
 include ':libs:baselib'
+include ':libs:interfaces'
 
 //业务模块
 include ':module:login'
 
 //业务模块单独运行壳
 include ':app_build:app_login'
+
+include ':module:hwebviewimpl'

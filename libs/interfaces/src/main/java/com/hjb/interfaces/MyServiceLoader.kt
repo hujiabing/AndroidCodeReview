@@ -1,4 +1,4 @@
-package com.hjb.baselib.autoservice
+package com.hjb.interfaces
 
 import java.util.*
 

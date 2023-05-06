@@ -32,17 +32,24 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
-                android:background="@color/purple_700"
+                android:background="#398939"
                 android:gravity="center"
-                android:onClick="@{()->vClick.onDataQueryAll()}"
-                android:text="查询全部" />
+                android:onClick="@{()->vClick.login()}"
+                android:text="登录" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="#3ffff0"
+                android:gravity="center"
+                android:onClick="@{()->vClick.toWeb()}"
+                android:text="浏览器" />
 
             <FrameLayout
                 android:id="@+id/container"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="1"
-                android:background="#33ffff"/>
+                android:layout_weight="1" />
         </androidx.appcompat.widget.LinearLayoutCompat>
 
 

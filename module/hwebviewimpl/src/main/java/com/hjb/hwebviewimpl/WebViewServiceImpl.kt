@@ -1,12 +1,13 @@
-package com.hjb.hwebview
+package com.hjb.hwebviewimpl
 
 import android.content.Context
 import android.content.Intent
 import com.google.auto.service.AutoService
-import com.hjb.baselib.autoservice.IWebViewInterface
+
 
 
 import com.hjb.hwebview.utils.WebConstants
+import com.hjb.interfaces.webview.IWebViewInterface
 
 /**
  *

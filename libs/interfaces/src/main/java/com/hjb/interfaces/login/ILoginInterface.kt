@@ -1,4 +1,4 @@
-package com.hjb.baselib.autoservice
+package com.hjb.interfaces.login
 
 import android.content.Context
 
@@ -9,6 +9,6 @@ import android.content.Context
  * @作者:         hujiabing
  * @日期:     2022/11/2 14:10
  */
-interface IWebViewInterface {
-    fun startWebViewActivity(context: Context, url: String, title: String)
+interface ILoginInterface {
+    fun startLoginActivity(context: Context)
 }

@@ -4,7 +4,7 @@
 
     <application>
         <activity
-            android:name="com.hjb.hwebview.WebViewActivity"
+            android:name="com.hjb.hwebviewimpl.WebViewActivity"
             android:exported="true">
             <meta-data
                 android:name="android.app.lib_name"

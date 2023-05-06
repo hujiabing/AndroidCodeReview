@@ -2,6 +2,7 @@ import com.hjb.versionplugin.*
 
 plugins {
     id 'com.hjb.versionplugin'
+    id 'org.jetbrains.kotlin.android'
 }
 apply from: "../../common_lib.gradle"
 
@@ -10,6 +11,6 @@ dependencies {
     api project(":libs:net")
     api project(":libs:baselib")
     api project(":libs:hwebview")
-    api AndroidX.constraintlayout
+    api project(":libs:interfaces")
     Room.INSTANCE.roomDependencies.each { v -> api v }
 }

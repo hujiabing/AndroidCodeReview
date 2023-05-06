@@ -1,4 +1,4 @@
-package com.hjb.hwebview
+package com.hjb.hwebviewimpl
 
 import android.os.Bundle
 import android.view.LayoutInflater

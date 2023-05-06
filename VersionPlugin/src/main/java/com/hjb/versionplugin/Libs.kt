@@ -7,14 +7,14 @@ package com.hjb.versionplugin
  */
 object AndroidX {
 
-    const val core_ktx = "androidx.core:core-ktx:1.9.0"
+    const val core_ktx = "androidx.core:core-ktx:1.10.0"
     const val constraintlayout = "androidx.constraintlayout:constraintlayout:2.1.4"
     const val multidex = "androidx.multidex:multidex:2.0.1"
-    const val androidXAnnotation = "androidx.annotation:annotation:1.5.0"
-    const val recyclerview = "androidx.recyclerview:recyclerview:1.2.1"
-    const val appcompat = "androidx.appcompat:appcompat:1.5.1"
+    const val androidXAnnotation = "androidx.annotation:annotation:1.6.0"
+    const val recyclerview = "androidx.recyclerview:recyclerview:1.3.0"
+    const val appcompat = "androidx.appcompat:appcompat:1.6.1"
 
-    private const val lifecycle_Version = "2.5.1"
+    private const val lifecycle_Version = "2.6.1"
     const val lifecycle_livedata = "androidx.lifecycle:lifecycle-livedata:$lifecycle_Version"
     const val lifecycle_livedata_ktx =
         "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_Version"
@@ -24,7 +24,7 @@ object AndroidX {
     const val lifecycle_viewmodel = "androidx.lifecycle:lifecycle-viewmodel:$lifecycle_Version"
     const val lifecycle_service = "androidx.lifecycle:lifecycle-service:$lifecycle_Version"
     const val lifecycle_process = "androidx.lifecycle:lifecycle-process:$lifecycle_Version"
-
+    const val datastore_preferences = "androidx.datastore:datastore-preferences:1.0.0"
     val lifecycleDependencies = arrayOf(
         lifecycle_livedata,
         lifecycle_livedata_ktx,
@@ -44,7 +44,7 @@ object AndroidX {
 
 object Google {
     const val autoService = "com.google.auto.service:auto-service:1.0.1"
-    const val material = "com.google.android.material:material:1.7.0"
+    const val material = "com.google.android.material:material:1.8.0"
 }
 
 object Coroutines {
@@ -61,8 +61,8 @@ object Coroutines {
 }
 
 object RxJava {
-    const val rxjava = "io.reactivex.rxjava3:rxjava:3.1.5"
-    const val rxandroid = "io.reactivex.rxjava3:rxandroid:3.0.0"
+    const val rxjava = "io.reactivex.rxjava3:rxjava:3.1.6"
+    const val rxandroid = "io.reactivex.rxjava3:rxandroid:3.0.2"
     val rxJavaDependencies = arrayOf(
         rxjava,
         rxandroid,
@@ -70,7 +70,7 @@ object RxJava {
 }
 
 object Room {
-    const val room_version = "2.4.3"
+    const val room_version = "2.5.1"
     const val room_runtime = "androidx.room:room-runtime:$room_version"
     const val room_compiler = "androidx.room:room-compiler:$room_version"
     const val room_ktx = "androidx.room:room-ktx:$room_version"
@@ -81,8 +81,9 @@ object Room {
 }
 
 object Retrofit {
-    const val okhttp = "com.squareup.okhttp3:okhttp:4.10.0"
-    const val logging_interceptor = "com.squareup.okhttp3:logging-interceptor:4.10.0"
+    const val okhttpVersion = "4.11.0"
+    const val okhttp = "com.squareup.okhttp3:okhttp:$okhttpVersion"
+    const val logging_interceptor = "com.squareup.okhttp3:logging-interceptor:$okhttpVersion"
     const val retrofit = "com.squareup.retrofit2:retrofit:2.9.0"
 
     val retrofitDependencies = arrayOf(
@@ -97,5 +98,6 @@ object Libs {
 
     const val strictDatabinding = "com.kunminx.arch:strict-databinding:5.6.0"
     const val unPeekLivedata = "com.kunminx.arch:unpeek-livedata:7.8.0"
+    const val MMKV = "com.tencent:mmkv:1.2.16" ///快速存储 不重要可以丢失的数据用这个
 }
 
