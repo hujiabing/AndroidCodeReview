@@ -6,6 +6,10 @@ plugins {
 }
 apply from: "../../common_lib.gradle"
 
+android {
+    namespace 'com.hjb.hwebview'
+}
+
 
 dependencies {
     implementation project(":libs:interfaces")
