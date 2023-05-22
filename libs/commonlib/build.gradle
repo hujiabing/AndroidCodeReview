@@ -6,6 +6,10 @@ plugins {
 }
 apply from: "../../common_lib.gradle"
 
+android {
+    namespace 'com.hjb.commonlib'
+}
+
 
 dependencies {
     api project(":libs:net")

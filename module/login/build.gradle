@@ -7,6 +7,10 @@ plugins {
 }
 apply from: "../../common_lib.gradle"
 
+android {
+    namespace 'com.hjb.login'
+}
+
 
 dependencies {
     implementation project(":libs:commonlib")

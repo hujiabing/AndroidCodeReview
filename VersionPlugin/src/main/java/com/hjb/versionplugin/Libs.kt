@@ -7,7 +7,7 @@ package com.hjb.versionplugin
  */
 object AndroidX {
 
-    const val core_ktx = "androidx.core:core-ktx:1.10.0"
+    const val core_ktx = "androidx.core:core-ktx:1.10.1"
     const val constraintlayout = "androidx.constraintlayout:constraintlayout:2.1.4"
     const val multidex = "androidx.multidex:multidex:2.0.1"
     const val androidXAnnotation = "androidx.annotation:annotation:1.6.0"
@@ -44,11 +44,11 @@ object AndroidX {
 
 object Google {
     const val autoService = "com.google.auto.service:auto-service:1.0.1"
-    const val material = "com.google.android.material:material:1.8.0"
+    const val material = "com.google.android.material:material:1.9.0"
 }
 
 object Coroutines {
-    private const val coroutinesVersion = "1.6.4"
+    private const val coroutinesVersion = "1.7.1"
     const val kotlinx_coroutines_core =
         "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion"
     const val kotlinx_coroutines_android =
