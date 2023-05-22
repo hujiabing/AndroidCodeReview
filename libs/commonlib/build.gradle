@@ -12,5 +12,6 @@ dependencies {
     api project(":libs:baselib")
     api project(":libs:hwebview")
     api project(":libs:interfaces")
+    api project(":libs:imglib")
     Room.INSTANCE.roomDependencies.each { v -> api v }
 }

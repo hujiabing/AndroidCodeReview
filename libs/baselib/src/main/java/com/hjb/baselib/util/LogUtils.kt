@@ -1,7 +1,7 @@
-package com.hjb.commonlib.utils
+package com.hjb.baselib.utils
 
 import android.util.Log
-import com.hjb.net.IS_DEBUG
+
 
 /**
  *

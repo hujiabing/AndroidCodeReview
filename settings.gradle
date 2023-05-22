@@ -33,7 +33,7 @@ include ':libs:commonlib'
 include ':libs:hwebview'
 include ':libs:baselib'
 include ':libs:interfaces'
-
+include ':libs:imglib'
 //业务模块
 include ':module:login'
 
@@ -41,3 +41,4 @@ include ':module:login'
 include ':app_build:app_login'
 
 include ':module:hwebviewimpl'
+

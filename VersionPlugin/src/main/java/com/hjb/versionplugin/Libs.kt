@@ -95,9 +95,12 @@ object Retrofit {
 
 object Libs {
     const val fastjson = "com.alibaba:fastjson:1.2.83"
-
     const val strictDatabinding = "com.kunminx.arch:strict-databinding:5.6.0"
     const val unPeekLivedata = "com.kunminx.arch:unpeek-livedata:7.8.0"
     const val MMKV = "com.tencent:mmkv:1.2.16" ///快速存储 不重要可以丢失的数据用这个
+    const val glideVersion = "4.15.1"
+    const val glide = "com.github.bumptech.glide:glide:$glideVersion"
+    const val glide_annotations = "com.github.bumptech.glide:annotations:$glideVersion"
+    const val glide_compiler = "com.github.bumptech.glide:compiler:$glideVersion"
 }
 

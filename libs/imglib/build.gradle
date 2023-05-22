@@ -1,0 +1,15 @@
+import com.hjb.versionplugin.*
+
+plugins {
+    id 'com.hjb.versionplugin'
+    id 'org.jetbrains.kotlin.android'
+}
+apply from: "../../common_lib.gradle"
+
+
+dependencies {
+    Retrofit.INSTANCE.retrofitDependencies.each {v -> api v}
+    implementation project(":libs:baselib")
+    implementation Libs.glide_annotations
+    annotationProcessor  Libs.glide_compiler
+}
