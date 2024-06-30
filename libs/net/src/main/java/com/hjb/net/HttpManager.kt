@@ -42,7 +42,6 @@ object HttpManager {
 
     //创建OkHttpClient
     private fun createOkHttpClient(): OkHttpClient {
-
         val srcBuilder: OkHttpClient.Builder = OkHttpClient.Builder()
             .addInterceptors(getInterceptors())
             .readTimeout(60, TimeUnit.SECONDS)

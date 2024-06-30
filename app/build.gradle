@@ -1,24 +1,21 @@
-import com.hjb.versionplugin.*
-
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-kapt'
-    // 2. 导入 plugin-version 插件
-    id "com.hjb.versionplugin"
 }
-
+def app = rootProject.ext
 android {
     namespace 'com.hjb.androidcodereview'
-    compileSdk rootProject.ext.compileSdk
+    compileSdk app.compileSdk
 
     defaultConfig {
         applicationId "com.hjb.androidcodereview"
-        minSdk rootProject.ext.minSdk
-        targetSdk rootProject.ext.targetSdk
-        versionCode rootProject.ext.versionCode
-        versionName rootProject.ext.versionName
-
+        minSdkVersion app.minSdk
+        targetSdkVersion app.targetSdk
+        versionCode app.versionCode
+        versionName app.versionName
+        multiDexEnabled true
+        multiDexKeepProguard file("tinker_multidexkeep.pro")
 
         javaCompileOptions {
             annotationProcessorOptions {
@@ -29,6 +26,7 @@ android {
                 ]
             }
         }
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
@@ -48,6 +46,7 @@ android {
     buildFeatures {
         viewBinding true
         dataBinding true
+        aidl true
     }
 
     packagingOptions {
@@ -56,9 +55,33 @@ android {
 
 }
 
+
+
+afterEvaluate {
+    tasks.matching{
+        it.name.startsWith('dex')
+    }.each {dex->
+        println("=========...."+dex)
+
+    }
+}
 dependencies {
-    kapt Room.room_compiler
+    implementation app.material
+    kapt app.room_compiler
     implementation project(":libs:commonlib")
-    runtimeOnly project(":module:login")
+//    runtimeOnly project(":module:login")
     runtimeOnly project(":module:hwebviewimpl")
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.11'
+//    implementation project(':demomodule')
+    api("com.tencent.tinker:tinker-android-lib:${app.TINKER_VERSION}") { changing = true }
+//     Maven local cannot handle transist dependencies.
+    implementation("com.tencent.tinker:tinker-android-loader:${app.TINKER_VERSION}") { changing = true }
+    annotationProcessor("com.tencent.tinker:tinker-android-anno:${app.TINKER_VERSION}") { changing = true }
+    compileOnly("com.tencent.tinker:tinker-android-anno:${app.TINKER_VERSION}") { changing = true }
+    compileOnly("com.tencent.tinker:tinker-android-anno-support:${app.TINKER_VERSION}") { changing = true }
+
+
 }

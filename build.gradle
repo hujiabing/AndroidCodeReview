@@ -1,21 +1,20 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
+buildscript {
+    apply from: "./config.gradle"
+    dependencies {
+        classpath("com.tencent.tinker:tinker-patch-gradle-plugin:${rootProject.ext.TINKER_VERSION}") {
+            changing = rootProject.ext.TINKER_VERSION?.endsWith("-SNAPSHOT")
+            exclude group: 'com.android.tools.build', module: 'gradle'
+        }
+    }
+}
 plugins {
-    id 'com.android.application' version '8.0.1' apply false
-    id 'com.android.library' version '8.0.1' apply false
+    id 'com.android.application' version '7.4.1' apply false
+    id 'com.android.library' version '7.4.1' apply false
     id 'org.jetbrains.kotlin.android' version '1.8.21' apply false
 }
-def versionMajor = 1
-def versionChild = 0
-def versionPatch = 0
 
-ext {
-    versionCode = versionMajor * 10000 + versionChild * 100 + versionPatch * 1
-    versionName = "${versionMajor}.${versionChild}.${versionPatch}"
-    compileSdk = 33
-    minSdk = 21
-    targetSdk = 33
-}
 
 task clean(type: Delete) {
     delete rootProject.buildDir

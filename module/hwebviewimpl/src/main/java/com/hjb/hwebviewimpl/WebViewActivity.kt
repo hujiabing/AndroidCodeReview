@@ -7,6 +7,8 @@ import androidx.databinding.DataBindingUtil
 
 import com.hjb.hwebview.databinding.ActivityWebViewBinding
 import com.hjb.hwebview.utils.WebConstants
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 class WebViewActivity : AppCompatActivity() {
     lateinit var mDataBinding: ActivityWebViewBinding

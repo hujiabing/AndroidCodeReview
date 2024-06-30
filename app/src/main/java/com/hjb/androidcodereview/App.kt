@@ -1,6 +1,9 @@
 package com.hjb.androidcodereview
 
 import android.app.Application
+import android.content.Context
+import android.os.Handler
+import androidx.multidex.MultiDex
 import com.hjb.baselib.HBaseApplication
 
 import kotlin.properties.Delegates
@@ -17,9 +20,16 @@ class App : HBaseApplication() {
         var instance: App by Delegates.notNull()
     }
 
+    override fun attachBaseContext(base: Context?) {
+        super.attachBaseContext(base)
+        MultiDex.install(this)
+
+    }
+
     override fun onCreate() {
         super.onCreate()
         instance = this
 
     }
+
 }

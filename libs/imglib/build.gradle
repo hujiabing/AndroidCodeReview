@@ -1,15 +1,15 @@
-import com.hjb.versionplugin.*
-
 plugins {
-    id 'com.hjb.versionplugin'
     id 'org.jetbrains.kotlin.android'
 }
 apply from: "../../common_lib.gradle"
+android {
+    namespace 'com.hjb.imglib'
+}
 
-
+def app = rootProject.ext
 dependencies {
-    Retrofit.INSTANCE.retrofitDependencies.each {v -> api v}
+    app.RetrofitDependencies.each {v -> api v}
     implementation project(":libs:baselib")
-    implementation Libs.glide_annotations
-    annotationProcessor  Libs.glide_compiler
+    implementation app.glide_annotations
+    annotationProcessor  app.glide_compiler
 }

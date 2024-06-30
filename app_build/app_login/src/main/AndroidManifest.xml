@@ -2,6 +2,14 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+    <queries>
+        <!--如果想要与其他的应用进行AIDL通信的话，需要在这里注册包名的信息-->
+        <!--谷歌的文档说明 https://developer.android.google.cn/guide/topics/manifest/queries-element?hl=en-->
+        <package android:name="com.hjb.androidcodereview" />
+    </queries>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -15,18 +23,25 @@
     <uses-permission android:name="com.vivo.notification.permission.BADGE_ICON" />
 
     <application
-
         android:name=".App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AndroidCodeReview"
+        android:theme="@style/Theme.App_Login"
         android:usesCleartextTraffic="true"
         tools:replace="android:allowBackup,android:icon"
-        tools:targetApi="33" >
+        tools:targetApi="32">
+        <activity
+            android:name=".LoginSplashActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

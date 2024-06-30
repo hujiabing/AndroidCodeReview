@@ -7,11 +7,13 @@ pluginManagement {
         gradlePluginPortal()
         google()
         mavenCentral()
+
+        maven { url 'https://jitpack.io' }
     }
 }
 
 dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)
     repositories {
         maven { url 'https://maven.aliyun.com/repository/public' }
         maven { url 'https://maven.aliyun.com/nexus/content/repositories/jcenter' }
@@ -19,14 +21,25 @@ dependencyResolutionManagement {
         maven { url 'https://maven.aliyun.com/repository/central' }
         google()
         mavenCentral()
+
+        maven { url 'https://jitpack.io' }
     }
 }
 
 rootProject.name = "AndroidCodeReview"
-//版本控制
-includeBuild 'VersionPlugin'
-//主软壳
 include ':app'
+setBinding(new Binding([gradle: this]))
+def rootName = "AndroidCodeReview"//项目根目录名字
+evaluate(new File(
+        settingsDir.parentFile, "$rootName/hjbflutter/module/demomodule/.android/include_flutter.groovy"
+))
+//
+//include ':demomodule'
+//project(':demomodule').projectDir = new File("./hjbflutter/module/demomodule")
+//版本控制
+//includeBuild 'VersionPlugin'
+//主软壳
+
 //通用组件
 include ':libs:net'
 include ':libs:commonlib'
@@ -42,3 +55,6 @@ include ':app_build:app_login'
 
 include ':module:hwebviewimpl'
 
+
+include ':demomodule'
+project(':demomodule').projectDir = new File('hjbflutter/module/demomodule')

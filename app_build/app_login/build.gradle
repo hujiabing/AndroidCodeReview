@@ -1,23 +1,19 @@
-import com.hjb.versionplugin.*
-
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-kapt'
-    // 2. 导入 plugin-version 插件
-    id "com.hjb.versionplugin"
 }
-
+def app = rootProject.ext
 android {
     namespace 'com.hjb.app_login'
-    compileSdk rootProject.ext.compileSdk
+    compileSdk app.compileSdk
 
     defaultConfig {
         applicationId "com.hjb.app_login"
-        minSdk rootProject.ext.minSdk
-        targetSdk rootProject.ext.targetSdk
-        versionCode rootProject.ext.versionCode
-        versionName rootProject.ext.versionName
+        minSdkVersion app.minSdk
+        targetSdkVersion app.targetSdk
+        versionCode app.versionCode
+        versionName app.versionName
 
     }
 
@@ -37,6 +33,7 @@ android {
     buildFeatures {
         viewBinding true
         dataBinding true
+        aidl true
     }
     packagingOptions {
         exclude 'META-INF/androidx.*'
@@ -44,7 +41,8 @@ android {
 }
 
 dependencies {
-    kapt Room.room_compiler
+    implementation app.material
+    kapt app.room_compiler
     implementation project(":libs:commonlib")
     runtimeOnly project(":module:login")
 }

@@ -20,6 +20,7 @@
         tools:context=".MainActivity">
 
         <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/v_GLin"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
@@ -30,12 +31,14 @@
 
 
             <TextView
+                android:id="@+id/tv_myView"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:background="#398939"
                 android:gravity="center"
                 android:onClick="@{()->vClick.login()}"
                 android:text="登录" />
+
 
             <TextView
                 android:layout_width="match_parent"
@@ -44,6 +47,14 @@
                 android:gravity="center"
                 android:onClick="@{()->vClick.toWeb()}"
                 android:text="浏览器" />
+
+            <TextView
+                android:id="@+id/tvNumber"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="#3ffff0"
+                android:gravity="center"
+                android:text="" />
 
             <FrameLayout
                 android:id="@+id/container"
